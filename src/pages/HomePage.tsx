@@ -54,7 +54,7 @@ const HomePage = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 animate-fade-in">
-              Reliable IT Services for Public Sector Organisations
+              Reliable IT Services for Public and Private Sector Organisations
             </h1>
             <p className="text-xl text-white/90 mb-8 animate-fade-in" style={{ animationDelay: "0.1s" }}>
               We are a dedicated team of software engineers delivering secure, efficient and compliant digital solutions.

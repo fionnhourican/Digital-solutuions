@@ -1,8 +1,11 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Target, Users, Award, Shield } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import ResponsiveImage from "@/components/common/ResponsiveImage";
 import { imageConfigs } from "@/lib/images";
+import { teamMembers } from "@/data/team";
 
 const AboutPage = () => {
   const values = [
@@ -29,6 +32,19 @@ const AboutPage = () => {
     "GDPR Compliance Certification",
     "ISO 27001 Knowledge",
   ];
+
+  useEffect(() => {
+    // Check if there's a hash in the URL and scroll to it
+    if (window.location.hash) {
+      const elementId = window.location.hash.substring(1);
+      setTimeout(() => {
+        const element = document.getElementById(elementId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, []);
 
   return (
     <div className="min-h-screen">
@@ -121,7 +137,7 @@ const AboutPage = () => {
       </section>
 
       {/* Team */}
-      <section className="py-20 bg-muted">
+      <section id="team" className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Our Team</h2>
@@ -132,19 +148,24 @@ const AboutPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {[
-              { name: "Sarah O'Brien", role: "Lead Developer", initials: "SO" },
-              { name: "Michael Walsh", role: "Cloud Architect", initials: "MW" },
-              { name: "Emma Byrne", role: "Systems Engineer", initials: "EB" },
-              { name: "David Murphy", role: "Security Specialist", initials: "DM" },
-            ].map((member, index) => (
-              <Card key={index} className="p-6 text-center hover-lift">
-                <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-primary">{member.initials}</span>
-                </div>
-                <h3 className="font-semibold text-lg mb-1">{member.name}</h3>
-                <p className="text-muted-foreground text-sm">{member.role}</p>
-              </Card>
+            {teamMembers.map((member) => (
+              <Link key={member.id} to={`/team/${member.id}`}>
+                <Card className="p-6 text-center hover-lift cursor-pointer transition-transform hover:scale-105">
+                  <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden">
+                    {member.image ? (
+                      <img 
+                        src={member.image} 
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <span className="text-2xl font-bold text-primary">{member.initials}</span>
+                    )}
+                  </div>
+                  <h3 className="font-semibold text-lg mb-1">{member.name}</h3>
+                  <p className="text-muted-foreground text-sm">{member.role}</p>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
