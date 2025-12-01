@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 214 25% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 214 25% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 214 25% 20%;
+
+    /* Government Professional Blue */
+    --primary: 214 68% 34%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-light: 214 68% 45%;
+    --primary-dark: 214 68% 25%;
+
+    /* Professional Green Accent */
+    --accent: 164 100% 33%;
+    --accent-foreground: 0 0% 100%;
+    
+    --accent-light: 164 100% 40%;
+
+    --secondary: 214 15% 95%;
+    --secondary-foreground: 214 25% 20%;
+
+    --muted: 214 15% 97%;
+    --muted-foreground: 214 15% 45%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 214 68% 34%;
+
+    --radius: 0.5rem;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(214 68% 34%) 0%, hsl(214 68% 25%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(214 15% 97%) 100%);
+    
+    /* Shadows */
+    --shadow-card: 0 2px 8px rgba(30, 77, 143, 0.08);
+    --shadow-hover: 0 4px 16px rgba(30, 77, 143, 0.12);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 214 30% 12%;
+    --foreground: 0 0% 95%;
+
+    --card: 214 25% 15%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 214 25% 15%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 214 68% 45%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-light: 214 68% 55%;
+    --primary-dark: 214 68% 35%;
+
+    --accent: 164 100% 40%;
+    --accent-foreground: 0 0% 100%;
+    
+    --accent-light: 164 100% 50%;
+
+    --secondary: 214 20% 20%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 214 20% 18%;
+    --muted-foreground: 214 15% 60%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 20% 25%;
+    --input: 214 20% 25%;
+    --ring: 214 68% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer utilities {
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+}
