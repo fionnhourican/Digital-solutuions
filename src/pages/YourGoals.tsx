@@ -5,17 +5,20 @@ import { useState } from "react";
 const goals = [
   {
     title: "Build your product.",
-    description: "Bring your ideas to life with a development team that can take your product from concept to launch, fast and efficiently.",
+    description:
+      "Bring your ideas to life with a development team that can take your product from concept to launch, fast and efficiently.",
     color: "bg-card-teal",
   },
   {
     title: "Scale your product.",
-    description: "Grow your platform without limits, with scalable architecture, feature expansion, and performance optimization that adapts to your business.",
+    description:
+      "Grow your platform without limits, with scalable architecture, feature expansion, and performance optimization that adapts to your business.",
     color: "bg-card-purple",
   },
   {
     title: "Future-proof your product.",
-    description: "We help you build reliable, high-performance systems that remain maintainable, secure, and ready for tomorrow's challenges.",
+    description:
+      "We help you build reliable, high-performance systems that remain maintainable, secure, and ready for tomorrow's challenges.",
     color: "bg-card-green",
   },
 ];
@@ -25,7 +28,7 @@ const YourGoals = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="bg-card-navy min-h-[60vh] flex items-center justify-center pt-16 relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -37,7 +40,8 @@ const YourGoals = () => {
           <div className="max-w-4xl mx-auto text-center text-primary-foreground">
             <h1 className="text-6xl font-bold mb-6">Your Goals</h1>
             <p className="text-2xl text-primary-foreground/90 leading-relaxed">
-              We help Credit Unions achieve their strategic objectives through technology and partnership.
+              We help Credit Unions achieve their strategic objectives through
+              technology and partnership.
             </p>
           </div>
         </div>
@@ -52,12 +56,13 @@ const YourGoals = () => {
                 We're supporting the achievement of your goals
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                At TBD LTD, we understand that every Credit Union has unique objectives and challenges. 
-                Our comprehensive suite of solutions is designed to support you at every stage of your journey. 
-                Whether you're looking to expand your membership, streamline operations, or enhance security, 
-                we provide the tools, expertise, and partnership you need to succeed. With over 40 years of 
-                experience in the industry, we're committed to helping you achieve sustainable growth and 
-                operational excellence.
+                At TBD LTD, we understand that every business has unique
+                objectives and challenges. Our solutions are designed to support
+                you at every stage of your product journey. Whether you’re
+                launching a new idea, scaling your platform, or improving
+                performance, we provide the expertise, technology, and
+                partnership you need to succeed. We are committed to helping you
+                deliver reliable, high-quality software that drives real growth.
               </p>
             </div>
             <div className="bg-muted rounded-2xl aspect-[4/3]"></div>

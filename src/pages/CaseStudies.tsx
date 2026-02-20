@@ -4,12 +4,12 @@ import { useState } from "react";
 import { services } from "@/data/services";
 
 const caseStudies = [
-  { id: 1, title: "Case Study 1", category: "growth-lending", excerpt: "How we helped a Credit Union grow their membership by 40%", image: "" },
-  { id: 2, title: "Case Study 2", category: "digital-suite", excerpt: "Implementing a modern mobile banking solution", image: "" },
-  { id: 3, title: "Case Study 3", category: "core-system", excerpt: "Streamlining operations with our core system", image: "" },
-  { id: 4, title: "Case Study 4", category: "cloud-compliance", excerpt: "Ensuring compliance and security", image: "" },
-  { id: 5, title: "Case Study 5", category: "growth-lending", excerpt: "Expanding loan book with innovative solutions", image: "" },
-  { id: 6, title: "Case Study 6", category: "digital-suite", excerpt: "Digital transformation success story", image: "" },
+  { id: 1, title: "Case Study 1", category: "product-development", excerpt: "How we helped a startup launch their MVP in 8 weeks", image: "" },
+  { id: 2, title: "Case Study 2", category: "system-scaling", excerpt: "Scaling a platform to handle 10x traffic growth", image: "" },
+  { id: 3, title: "Case Study 3", category: "technical-strategy", excerpt: "Architecting a modern microservices infrastructure", image: "" },
+  { id: 4, title: "Case Study 4", category: "ai-engineering", excerpt: "Integrating AI features to automate workflows", image: "" },
+  { id: 5, title: "Case Study 5", category: "product-development", excerpt: "Building a full-stack SaaS platform from scratch", image: "" },
+  { id: 6, title: "Case Study 6", category: "system-scaling", excerpt: "Performance optimization reduced load times by 70%", image: "" },
 ];
 
 const CaseStudies = () => {
@@ -48,7 +48,7 @@ const CaseStudies = () => {
           <div className="max-w-4xl mx-auto text-center text-primary-foreground">
             <h1 className="text-6xl font-bold mb-6">Case Studies</h1>
             <p className="text-2xl text-primary-foreground/90 leading-relaxed">
-              Discover how we've helped Credit Unions achieve their goals
+              Discover how we’ve helped startups and growing companies achieve their goals
             </p>
           </div>
         </div>
@@ -98,21 +98,26 @@ const CaseStudies = () => {
             <div className="grid grid-cols-2 gap-8">
               {displayedStudies.map((study, index) => {
                 const layout = getCardLayout(index);
+                const service = services.find(s => s.id === study.category);
                 return (
-                  <div
+                  <a
                     key={study.id}
+                    href={`/services/${study.category}`}
                     className={`${
                       layout === "full" ? "col-span-2" : "col-span-1"
-                    } bg-muted rounded-2xl p-8 hover:shadow-lg transition-shadow cursor-pointer group`}
+                    } bg-muted rounded-2xl p-8 hover:shadow-lg transition-shadow cursor-pointer group block`}
                   >
                     <div className={`bg-muted-foreground/10 rounded-xl mb-6 ${
                       layout === "full" ? "h-96" : "h-64"
                     }`}></div>
+                    <div className="text-xs font-semibold text-primary uppercase tracking-widest mb-2">
+                      {service?.title}
+                    </div>
                     <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                       {study.title}
                     </h3>
                     <p className="text-muted-foreground">{study.excerpt}</p>
-                  </div>
+                  </a>
                 );
               })}
             </div>

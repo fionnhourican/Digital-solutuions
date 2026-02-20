@@ -99,13 +99,13 @@ const ContactUs = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="creditUnion">Credit Union</Label>
-                  <Input id="creditUnion" placeholder="Credit Union Name" className="mt-2" />
+                  <Label htmlFor="business">Business</Label>
+                  <Input id="business" placeholder="Business Name" className="mt-2" />
                 </div>
 
                 <div>
                   <Label htmlFor="jobRole">Job role*</Label>
-                  <Input id="jobRole" placeholder="Credit Union Job Role" className="mt-2" />
+                  <Input id="jobRole" placeholder="Your Job Role" className="mt-2" />
                 </div>
 
                 <div>
