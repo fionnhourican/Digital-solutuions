@@ -1,25 +1,25 @@
 import { motion } from "framer-motion";
-import { TrendingUp, Settings, ShieldCheck } from "lucide-react";
+import { Rocket, TrendingUp, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const goals = [
   {
+    icon: Rocket,
+    title: "Build",
+    subtitle: "Build your product.",
+    description: "Bring your ideas to life with a development team that can take your product from concept to launch, fast and efficiently.",
+  },
+  {
     icon: TrendingUp,
-    title: "Grow",
-    subtitle: "Grow your CU.",
-    description: "Make sure your Credit Union reaches its full potential with an IT provider who can be your long-term partner.",
+    title: "Scale",
+    subtitle: "Scale your product.",
+    description: "Grow your platform without limits, with scalable architecture, feature expansion, and performance optimization that adapts to your business.",
   },
   {
-    icon: Settings,
-    title: "Manage",
-    subtitle: "Manage your CU.",
-    description: "Be more efficient with our scalable, end-to-end financial software, self-service solutions and IT managed service.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Protect",
-    subtitle: "Protect your CU.",
-    description: "We provide dedicated compliance support and operational resilience to ensure your Credit Union and members stay safe.",
+    icon: Shield,
+    title: "Future-proof",
+    subtitle: "Future-proof your product.",
+    description: "We help you build reliable, high-performance systems that remain maintainable, secure, and ready for tomorrow's challenges.",
   },
 ];
 
@@ -37,7 +37,7 @@ const GoalsSection = () => {
             A reliable software partner who is
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Dedicated to helping you reach your strategic goals.
+            Dedicated to helping you reach your business goals.
           </h2>
         </motion.div>
 

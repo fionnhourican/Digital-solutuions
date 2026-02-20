@@ -3,18 +3,18 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import { Button } from "@/components/ui/button";
-import { products } from "@/data/products";
+import { services } from "@/data/services";
 
-const ProductCategory = () => {
+const ServiceCategory = () => {
   const { category } = useParams<{ category: string }>();
-  const product = products.find(p => p.id === category);
+  const service = services.find(s => s.id === category);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [category]);
 
-  if (!product) {
-    return <div>Product not found</div>;
+  if (!service) {
+    return <div>Service not found</div>;
   }
 
   return (
@@ -22,7 +22,7 @@ const ProductCategory = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className={`${product.color} min-h-screen flex items-center justify-center relative overflow-hidden`}>
+      <section className={`${service.color} min-h-screen flex items-center justify-center relative overflow-hidden`}>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full border-2 border-white/10" />
           <div className="absolute top-20 -left-20 w-72 h-72 rounded-full border-2 border-white/10" />
@@ -30,9 +30,9 @@ const ProductCategory = () => {
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-primary-foreground">
-            <h1 className="text-5xl font-bold mb-4">{product.title}</h1>
+            <h1 className="text-5xl font-bold mb-4">{service.title}</h1>
             <p className="text-xl text-primary-foreground/90 leading-relaxed">
-              {product.description}
+              {service.description}
             </p>
           </div>
         </div>
@@ -42,12 +42,12 @@ const ProductCategory = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {product.subcategories.map((sub: any, i: number) => (
+            {service.subcategories.map((sub: any, i: number) => (
               <div
                 key={i}
                 className="bg-muted rounded-2xl p-10 hover:shadow-lg transition-all min-h-[300px] flex flex-col group hover-card"
                 style={{
-                  ['--hover-bg' as any]: `hsl(${product.hslColor})`,
+                  ['--hover-bg' as any]: `hsl(${service.hslColor})`,
                 }}
               >
                 <h3 className="text-2xl font-bold text-foreground group-hover:text-primary-foreground mb-3">{sub.title}</h3>
@@ -66,4 +66,4 @@ const ProductCategory = () => {
   );
 };
 
-export default ProductCategory;
+export default ServiceCategory;

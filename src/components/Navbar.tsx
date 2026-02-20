@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import ProductsMegaMenu from "./ProductsMegaMenu";
+import ServicesMegaMenu from "./ServicesMegaMenu";
 import CompanyMegaMenu from "./CompanyMegaMenu";
 
 const navItems = [
-  { label: "Products", hasDropdown: true },
+  { label: "Services", hasDropdown: true },
   { label: "Company", hasDropdown: true },
   { label: "Case Studies", href: "/case-studies" },
 ];
@@ -41,7 +41,7 @@ const Navbar = () => {
                   {item.hasDropdown && <ChevronDown className="w-3.5 h-3.5" />}
                 </button>
               )}
-              {item.label === "Products" && activeDropdown === "Products" && <ProductsMegaMenu />}
+              {item.label === "Services" && activeDropdown === "Services" && <ServicesMegaMenu />}
               {item.label === "Company" && activeDropdown === "Company" && <CompanyMegaMenu />}
             </div>
           ))}

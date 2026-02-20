@@ -24,7 +24,7 @@ const PartnersSection = () => {
             We are incredibly proud to work in partnership with ambitious businesses.
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            We deliver what your business needs; clearly, efficiently, and effectively.
+            We deliver scalable, high-performance software with clarity, efficiency and technical precision.
           </p>
         </motion.div>
 

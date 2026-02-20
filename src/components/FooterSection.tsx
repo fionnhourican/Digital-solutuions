@@ -1,9 +1,9 @@
 const footerLinks = {
-  Products: [
-    { name: "Growth & Lending", href: "/products/growth-lending" },
-    { name: "Digital Suite", href: "/products/digital-suite" },
-    { name: "Core System", href: "/products/core-system" },
-    { name: "Cloud Infrastructure", href: "/products/cloud-compliance" }
+  Services: [
+    { name: "Product Development", href: "/services/product-development" },
+    { name: "System Scaling & Optimisation", href: "/services/system-scaling" },
+    { name: "Technical Strategy & Architecture", href: "/services/technical-strategy" },
+    { name: "AI-Enhanced Engineering", href: "/services/ai-engineering" }
   ],
   Company: [
     { name: "Our Company", href: "/our-company" },

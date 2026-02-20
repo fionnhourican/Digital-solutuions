@@ -4,18 +4,18 @@ import { useState } from "react";
 
 const goals = [
   {
-    title: "Grow Your Credit Union",
-    description: "Expand your membership base and loan book with innovative solutions designed to attract and retain members.",
+    title: "Build your product.",
+    description: "Bring your ideas to life with a development team that can take your product from concept to launch, fast and efficiently.",
     color: "bg-card-teal",
   },
   {
-    title: "Manage Efficiently",
-    description: "Streamline operations with our comprehensive core system and automation tools that save time and reduce costs.",
+    title: "Scale your product.",
+    description: "Grow your platform without limits, with scalable architecture, feature expansion, and performance optimization that adapts to your business.",
     color: "bg-card-purple",
   },
   {
-    title: "Protect Your Members",
-    description: "Ensure security and compliance with robust fraud detection, data protection, and regulatory reporting tools.",
+    title: "Future-proof your product.",
+    description: "We help you build reliable, high-performance systems that remain maintainable, secure, and ready for tomorrow's challenges.",
     color: "bg-card-green",
   },
 ];

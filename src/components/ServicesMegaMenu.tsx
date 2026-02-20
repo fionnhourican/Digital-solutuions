@@ -1,27 +1,27 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { products } from "@/data/products";
+import { services } from "@/data/services";
 
-const ProductsMegaMenu = () => {
-  const [activeProduct, setActiveProduct] = useState(products[0].id);
-  const activeProductData = products.find(p => p.id === activeProduct);
+const ServicesMegaMenu = () => {
+  const [activeService, setActiveService] = useState(services[0].id);
+  const activeServiceData = services.find(s => s.id === activeService);
   
   return (
     <div className="absolute left-0 top-full bg-background border border-border shadow-lg rounded-lg mt-0 w-[800px] z-50 -ml-6">
       <div className="grid grid-cols-2 gap-0">
-          {/* Left side - Core Products (darker background) */}
+          {/* Left side - Core Services (darker background) */}
           <div className="bg-muted/70 p-6 rounded-l-lg">
             <div className="space-y-4">
-              {products.map((product, i) => (
+              {services.map((service, i) => (
                 <Link
                   key={i}
-                  to={`/products/${product.id}`}
-                  onMouseEnter={() => setActiveProduct(product.id)}
+                  to={`/services/${service.id}`}
+                  onMouseEnter={() => setActiveService(service.id)}
                   className={`block p-4 rounded-lg hover:bg-background/80 transition-colors ${
-                    activeProduct === product.id ? "bg-background/80" : ""
+                    activeService === service.id ? "bg-background/80" : ""
                   }`}
                 >
-                  <h4 className="font-semibold text-foreground">{product.title}</h4>
+                  <h4 className="font-semibold text-foreground">{service.title}</h4>
                 </Link>
               ))}
             </div>
@@ -33,7 +33,7 @@ const ProductsMegaMenu = () => {
               A Breakdown
             </h3>
             <div className="grid grid-cols-2 gap-6">
-              {activeProductData?.subcategories.slice(0, 4).map((sub, i) => (
+              {activeServiceData?.subcategories.slice(0, 4).map((sub, i) => (
                 <div key={i}>
                   <a
                     href="#"
@@ -50,4 +50,4 @@ const ProductsMegaMenu = () => {
   );
 };
 
-export default ProductsMegaMenu;
+export default ServicesMegaMenu;

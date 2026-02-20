@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import { useState } from "react";
-import { products } from "@/data/products";
+import { services } from "@/data/services";
 
 const caseStudies = [
   { id: 1, title: "Case Study 1", category: "growth-lending", excerpt: "How we helped a Credit Union grow their membership by 40%", image: "" },
@@ -71,20 +71,20 @@ const CaseStudies = () => {
             >
               All
             </button>
-            {products.map((product) => (
+            {services.map((service) => (
               <button
-                key={product.id}
+                key={service.id}
                 onClick={() => {
-                  setSelectedCategory(product.id);
+                  setSelectedCategory(service.id);
                   setCurrentPage(1);
                 }}
                 className={`px-6 py-3 rounded-full transition-colors ${
-                  selectedCategory === product.id 
+                  selectedCategory === service.id 
                     ? "bg-foreground text-background" 
                     : "bg-muted text-foreground hover:bg-muted/80"
                 }`}
               >
-                {product.title}
+                {service.title}
               </button>
             ))}
           </div>

@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import heroIllustration from "@/assets/hero-illustration.png";
 import { useRef, useEffect, useState } from "react";
-import { products } from "@/data/products";
+import { services } from "@/data/services";
 
-const cards = products.map(p => ({
-  ...p,
-  image: p.id === "growth-lending" ? heroIllustration : undefined,
+const cards = services.map(s => ({
+  ...s,
+  image: s.id === "product-development" ? heroIllustration : undefined,
 }));
 
 const HeroSection = () => {
@@ -76,10 +76,10 @@ const HeroSection = () => {
               className="max-w-xl"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                Strategic partner for your buisness
+               Agile software partners for ambitious startups
               </h1>
               <p className="text-lg text-white/70 mb-8 leading-relaxed">
-                We are a dedicated team of software engineers helping you deliver innovative, secure, and efficient digital solutions.
+                Our team of software engineers partners with startups to deliver clean, high-performance systems built for rapid iteration and long-term growth.
               </p>
               <Button className="rounded-full px-8 py-6 text-base gap-2 bg-white text-foreground hover:bg-white/90">
                 <a href="/contact-us">
@@ -117,7 +117,7 @@ const HeroSection = () => {
                   style={{ pointerEvents: i === activeIndex ? "auto" : "none" }}
                 >
                   <Link
-                    to={`/products/${card.id}`}
+                    to={`/services/${card.id}`}
                     className="bg-white/10 backdrop-blur-md rounded-2xl p-8 text-white w-full group hover:bg-white/15 transition-colors border border-white/10 relative overflow-hidden"
                   >
                     {card.image && (
