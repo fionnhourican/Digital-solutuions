@@ -1,21 +1,25 @@
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import { useState } from "react";
+import { Rocket, TrendingUp, Shield } from "lucide-react";
 
 const goals = [
   {
+    icon: Rocket,
     title: "Build your product.",
     description:
       "Bring your ideas to life with a development team that can take your product from concept to launch, fast and efficiently.",
     color: "bg-card-teal",
   },
   {
+    icon: TrendingUp,
     title: "Scale your product.",
     description:
       "Grow your platform without limits, with scalable architecture, feature expansion, and performance optimization that adapts to your business.",
     color: "bg-card-purple",
   },
   {
+    icon: Shield,
     title: "Future-proof your product.",
     description:
       "We help you build reliable, high-performance systems that remain maintainable, secure, and ready for tomorrow's challenges.",
@@ -58,7 +62,7 @@ const YourGoals = () => {
               <p className="text-lg text-muted-foreground leading-relaxed">
                 At TBD LTD, we understand that every business has unique
                 objectives and challenges. Our solutions are designed to support
-                you at every stage of your product journey. Whether you’re
+                you at every stage of your product journey. Whether you're
                 launching a new idea, scaling your platform, or improving
                 performance, we provide the expertise, technology, and
                 partnership you need to succeed. We are committed to helping you
@@ -79,11 +83,14 @@ const YourGoals = () => {
                 <button
                   key={i}
                   onClick={() => setSelectedGoal(i)}
-                  className={`${goal.color} rounded-2xl p-8 text-primary-foreground hover:shadow-xl transition-all text-left ${
+                  className={`${goal.color} rounded-2xl p-8 text-center hover:shadow-xl transition-all ${
                     selectedGoal === i ? "opacity-100" : "opacity-50"
                   }`}
                 >
-                  <h3 className="text-2xl font-bold">{goal.title}</h3>
+                  <div className="w-14 h-14 mx-auto rounded-xl bg-white/20 flex items-center justify-center mb-5">
+                    <goal.icon className="w-7 h-7 text-primary-foreground" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-primary-foreground">{goal.title}</h3>
                 </button>
               ))}
             </div>
